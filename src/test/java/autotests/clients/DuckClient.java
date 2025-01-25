@@ -3,8 +3,11 @@ package autotests.clients;
 import autotests.EndpointConfig;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.http.client.HttpClient;
+import com.consol.citrus.message.builder.ObjectMappingPayloadBuilder;
 import com.consol.citrus.testng.spring.TestNGCitrusSpringSupport;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ContextConfiguration;
@@ -119,7 +122,7 @@ public class DuckClient extends TestNGCitrusSpringSupport {
                                 + "\"\n" + "}"));
     }
 
-    public void validateResponseProperties(TestCaseRunner runner, String color, double height, String material, String sound, String wingsState) {
+    public void validateResponseProperties(TestCaseRunner runner, Object body) {
         runner.$(
                 http()
                         .client(yellowDuckService)
@@ -127,12 +130,7 @@ public class DuckClient extends TestNGCitrusSpringSupport {
                         .response(HttpStatus.OK)
                         .message()
                         .contentType(MediaType.APPLICATION_JSON_VALUE)
-                        .body("{" + "  \"color\": \"" + color + "\","
-                                + "  \"height\": " + height + ","
-                                + "  \"material\": \"" + material + "\","
-                                + "  \"sound\": \"" + sound + "\","
-                                + "  \"wingsState\": \"" + wingsState
-                                + "\"\n" + "}"));
+                        .body(new ObjectMappingPayloadBuilder(body, new ObjectMapper())));
     }
 
     public void validateResponse(TestCaseRunner runner, String responseMessage) {
@@ -142,7 +140,19 @@ public class DuckClient extends TestNGCitrusSpringSupport {
                         .receive()
                         .response(HttpStatus.OK)
                         .message()
-                        .contentType(MediaType.APPLICATION_JSON_VALUE).body(responseMessage));
+                        .contentType(MediaType.APPLICATION_JSON_VALUE)
+                        .body(new ClassPathResource(responseMessage)));
+    }
+
+    public void validateResponseUpdate(TestCaseRunner runner, String responseMessage) {
+        runner.$(
+                http()
+                        .client(yellowDuckService)
+                        .receive()
+                        .response(HttpStatus.OK)
+                        .message()
+                        .contentType(MediaType.APPLICATION_JSON_VALUE)
+                        .body(responseMessage));
     }
 
     public void validateResponseCreate(TestCaseRunner runner, String material) {
@@ -162,7 +172,7 @@ public class DuckClient extends TestNGCitrusSpringSupport {
                                 + "\"\n" + "}"));
     }
 
-    public void createDuck(TestCaseRunner runner, String color, double height, String material, String sound, String wingsState) {
+    public void createDuck(TestCaseRunner runner, Object body) {
         runner.$(
                 http()
                         .client(yellowDuckService)
@@ -170,11 +180,6 @@ public class DuckClient extends TestNGCitrusSpringSupport {
                         .post("/api/duck/create")
                         .message()
                         .contentType(MediaType.APPLICATION_JSON_VALUE)
-                        .body("{\n" + "  \"color\": \"" + color + "\",\n"
-                                + "  \"height\": " + height + ",\n"
-                                + "  \"material\": \"" + material + "\",\n"
-                                + "  \"sound\": \"" + sound + "\",\n"
-                                + "  \"wingsState\": \"" + wingsState
-                                + "\"\n" + "}"));
+                        .body(new ObjectMappingPayloadBuilder(body, new ObjectMapper())));
     }
 }

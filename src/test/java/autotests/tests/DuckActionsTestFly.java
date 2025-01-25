@@ -1,6 +1,8 @@
 package autotests.tests;
 
 import autotests.clients.DuckClient;
+import autotests.payloads.Duck;
+import autotests.payloads.WingState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
@@ -13,27 +15,30 @@ public class DuckActionsTestFly extends DuckClient {
     @Test(description = "Полёт уточки с активными крыльями")
     @CitrusTest
     public void successfulFly(@Optional @CitrusResource TestCaseRunner runner) {
-        createDuck(runner, "yellow", 0.15, "rubber", "quack", "ACTIVE");
-        getId(runner);
-        duckFly(runner, "${duckId}");
-        validateResponse(runner, "{\n" + "  \"message\": \"I’m flying\"\n" + "}");
+        Duck duck = new Duck().color("yellow").height(0.15).material("rubber").sound("quack").wingsState(WingState.ACTIVE);
+        createDuck(runner, duck);
+        String id = getId(runner);
+        duckFly(runner, id);
+        validateResponse(runner, "DuckActionTest/successfulFly.json");
     }
 
     @Test(description = "Полёт уточки с неактивными крыльями")
     @CitrusTest
     public void unsuccessfulFly(@Optional @CitrusResource TestCaseRunner runner) {
-        createDuck(runner, "yellow", 0.15, "rubber", "quack", "FIXED");
-        getId(runner);
-        duckFly(runner, "${duckId}");
-        validateResponse(runner, "{\n" + "  \"message\": \"I can’t fly\"\n" + "}");
+        Duck duck = new Duck().color("yellow").height(0.15).material("rubber").sound("quack").wingsState(WingState.FIXED);
+        createDuck(runner, duck);
+        String id = getId(runner);
+        duckFly(runner, id);
+        validateResponse(runner, "DuckActionTest/unsuccessfulFly.json");
     }
 
     @Test(description = "Полёт уточки с неопределёнными крыльями")
     @CitrusTest
     public void unsuccessfulFly2(@Optional @CitrusResource TestCaseRunner runner) {
-        createDuck(runner, "yellow", 0.15, "rubber", "quack", "UNDEFINED");
+        Duck duck = new Duck().color("yellow").height(0.15).material("rubber").sound("quack").wingsState(WingState.UNDEFINED);
+        createDuck(runner, duck);
         String id = getId(runner);
         duckFly(runner, id);
-        validateResponse(runner, "{\n" + "  \"message\": \"I can’t fly\"\n" + "}");
+        validateResponse(runner, "DuckActionTest/unsuccessfulFly.json");
     }
 }

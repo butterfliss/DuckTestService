@@ -1,6 +1,8 @@
 package autotests.tests;
 
 import autotests.clients.DuckClient;
+import autotests.payloads.Duck;
+import autotests.payloads.WingState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
@@ -16,12 +18,14 @@ public class DuckActionsTestProperties extends DuckClient {
         int even;
         String id;
         do{
-            createDuck(runner, "yellow", 1, "rubber", "quack", "ACTIVE");
+            Duck duck = new Duck().color("yellow").height(0.01).material("rubber").sound("quack").wingsState(WingState.ACTIVE);
+            createDuck(runner, duck);
             id = getId(runner);
             even = checkId(id);
         }while (even == 1);
+        Duck duck = new Duck().color("yellow").height(1.0).material("rubber").sound("quack").wingsState(WingState.ACTIVE);
         duckProperties(runner, id);
-        validateResponseProperties(runner,"yellow", 100, "rubber", "quack", "ACTIVE");
+        validateResponseProperties(runner,duck);
     }
 
     @Test(description = "Показ характеристик деревянной уточки, но характеристики не отображаются")
@@ -30,11 +34,13 @@ public class DuckActionsTestProperties extends DuckClient {
         int even;
         String id;
         do {
-            createDuck(runner, "yellow", 1, "wood", "quack", "ACTIVE");
+            Duck duck = new Duck().color("yellow").height(0.01).material("wood").sound("quack").wingsState(WingState.ACTIVE);
+            createDuck(runner, duck);
             id = getId(runner);
             even = checkId(id);
         } while (even == 0);
+        Duck duck = new Duck().color("yellow").height(1.0).material("rubber").sound("quack").wingsState(WingState.ACTIVE);
         duckProperties(runner, id);
-        validateResponseProperties(runner, "yellow", 100, "wood", "quack", "ACTIVE");
+        validateResponseProperties(runner,duck);
     }
 }

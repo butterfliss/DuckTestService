@@ -1,6 +1,8 @@
 package autotests.tests;
 
 import autotests.clients.DuckClient;
+import autotests.payloads.Duck;
+import autotests.payloads.WingState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
@@ -17,12 +19,13 @@ public class DuckActionsTestQuack extends DuckClient {
         int even;
         String id;
         do{
-            createDuck(runner, "yellow", 0.15, "rubber", "quack", "ACTIVE");
+            Duck duck = new Duck().color("yellow").height(0.15).material("rubber").sound("quack").wingsState(WingState.FIXED);
+            createDuck(runner, duck);
             id = getId(runner);
             even = checkId(id);
         } while (even == 1);
         duckQuack(runner, id, "1", "1");
-        validateResponse(runner, "{\n" + "  \"sound\": \"quack\"\n" + "}");
+        validateResponse(runner, "DuckActionTest/successfulQuack.json");
     }
 
     @Test(description = "Успешный кряк чётный id")
@@ -31,11 +34,12 @@ public class DuckActionsTestQuack extends DuckClient {
         int even;
         String id;
         do{
-            createDuck(runner, "yellow", 0.15, "rubber", "quack", "FIXED");
+            Duck duck = new Duck().color("yellow").height(0.15).material("rubber").sound("quack").wingsState(WingState.FIXED);
+            createDuck(runner, duck);
             id = getId(runner);
             even = checkId(id);
         } while (even == 0);
         duckQuack(runner, id, "1", "1");
-        validateResponse(runner, "{\n" + "  \"sound\": \"quack\"\n" + "}");
+        validateResponse(runner, "DuckActionTest/successfulQuack.json");
     }
 }
