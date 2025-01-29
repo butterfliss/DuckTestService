@@ -6,19 +6,28 @@ import autotests.payloads.WingState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import org.springframework.http.HttpStatus;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
 
+import static com.consol.citrus.container.FinallySequence.Builder.doFinally;
+
+@Epic("Тесты на duck-controller")
+@Feature("Эндпоинт /api/duck/delete")
 public class DuckTestDelete extends DuckClient {
 
     @Test(description = "Удаление утки")
     @CitrusTest
     public void successfulFly(@Optional @CitrusResource TestCaseRunner runner) {
-        Duck duck = new Duck().color("yellow").height(0.15).material("rubber").sound("quack").wingsState(WingState.FIXED);
-        createDuck(runner, duck);
-        String id = getId(runner);
-        duckDelete(runner, id);
+        runner.variable("duckId","126");
+        databaseUpdate(runner,
+                "insert into DUCK (id, color, height, material, sound, wings_state)\n" +
+                        "values (${duckId}, 'yellow', 1.0, 'rubber', 'quack','UNDEFINED');");
+        duckDelete(runner, "${duckId}");
         validateResponse(runner, "DuckActionTest/successfulDelete.json");
+        getAllIds(runner);
+        validateResponse(runner, "DuckActionTest/successfulDeleteDB.json");
     }
 }
