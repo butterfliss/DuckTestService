@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Class autotests.tests.DuckActionsTestQuack</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Class autotests.tests.DuckActionsTestQuack</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/autotests.tests.html">autotests.tests</a> &gt; DuckActionsTestQuack</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">2</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">1</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.110s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures" id="successRate">
+<div class="percent">50%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Failed tests</a>
+</li>
+<li>
+<a href="#tab1">Tests</a>
+</li>
+<li>
+<a href="#tab2">Standard output</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="unsuccessfulQuack[0](null)"></a>
+<h3 class="failures">unsuccessfulQuack[0](null)</h3>
+<span class="code">
+<pre>com.consol.citrus.exceptions.TestCaseFailedException: Failed to validate JSON text:
+{&quot;sound&quot;:&quot;moo&quot;} Values not equal for entry: 'sound', expected 'quack' but was 'moo'
+	at app//com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:143)
+	at app//com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
+	at app//com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
+	at app//autotests.clients.DuckClient.validateResponse(DuckClient.java:141)
+	at app//autotests.tests.DuckActionsTestQuack.unsuccessfulQuack(DuckActionsTestQuack.java:45)
+	at java.base@11.0.25/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.25/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.25/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.25/java.lang.reflect.Method.invoke(Method.java:566)
+	at app//org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
+	at app//com.consol.citrus.testng.TestNGHelper.lambda$invokeTestMethod$1(TestNGHelper.java:82)
+	at app//com.consol.citrus.common.DefaultTestLoader.lambda$doLoad$1(DefaultTestLoader.java:116)
+	at java.base@11.0.25/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//com.consol.citrus.common.DefaultTestLoader.doLoad(DefaultTestLoader.java:116)
+	at app//com.consol.citrus.common.DefaultTestLoader.load(DefaultTestLoader.java:94)
+	at app//com.consol.citrus.testng.TestNGHelper.invokeTestMethod(TestNGHelper.java:83)
+	at app//com.consol.citrus.testng.spring.TestNGCitrusSpringSupport.run(TestNGCitrusSpringSupport.java:185)
+	at app//com.consol.citrus.testng.spring.TestNGCitrusSpringSupport.run(TestNGCitrusSpringSupport.java:101)
+	at app//org.testng.internal.invokers.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:272)
+	at app//org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:669)
+	at app//org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at app//org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at app//org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at app//org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at app//org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at app//org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base@11.0.25/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at app//org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at app//org.testng.TestRunner.run(TestRunner.java:602)
+	at app//org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at app//org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at app//org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at app//org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at app//org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at app//org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at app//org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at app//org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at app//org.testng.TestNG.runSuites(TestNG.java:1099)
+	at app//org.testng.TestNG.run(TestNG.java:1067)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:153)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:96)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base@11.0.25/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base@11.0.25/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base@11.0.25/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base@11.0.25/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:119)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:66)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at app//worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: com.consol.citrus.exceptions.ValidationException: Failed to validate JSON text:
+{&quot;sound&quot;:&quot;moo&quot;} Values not equal for entry: 'sound', expected 'quack' but was 'moo'
+	at app//com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:114)
+	at app//com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:58)
+	at app//com.consol.citrus.validation.AbstractMessageValidator.validateMessage(AbstractMessageValidator.java:46)
+	at app//com.consol.citrus.actions.ReceiveMessageAction.validateMessage(ReceiveMessageAction.java:279)
+	at app//com.consol.citrus.actions.ReceiveMessageAction.doExecute(ReceiveMessageAction.java:168)
+	at app//com.consol.citrus.actions.AbstractTestAction.execute(AbstractTestAction.java:59)
+	at app//com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
+	... 59 more
+Caused by: java.lang.IllegalArgumentException: Values not equal for entry: 'sound', expected 'quack' but was 'moo'
+	at org.springframework.util.Assert.isTrue(Assert.java:121)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateJson(JsonTextMessageValidator.java:211)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:102)
+	... 65 more
+</pre>
+</span>
+</div>
+</div>
+<div id="tab1" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">successfulQuack[0](null)</td>
+<td class="success">0.042s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="failures">unsuccessfulQuack[0](null)</td>
+<td class="failures">0.068s</td>
+<td class="failures">failed</td>
+</tr>
+</table>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>22:31:13,950 DEBUG   util.TypeConverter| Using type converter 'spring'
+22:31:13,950 INFO  port.LoggingReporter| 
+22:31:13,955 INFO  port.LoggingReporter| ------------------------------------------------------------------------
+22:31:13,955 DEBUG port.LoggingReporter| STARTING TEST DuckActionsTestQuack.successfulQuack &lt;autotests.tests&gt;
+22:31:13,955 INFO  port.LoggingReporter| 
+22:31:13,955 DEBUG trus.DefaultTestCase| Initializing test case
+22:31:13,956 DEBUG  context.TestContext| Setting variable: citrus.test.name with value: 'DuckActionsTestQuack.successfulQuack'
+22:31:13,956 DEBUG  context.TestContext| Setting variable: citrus.test.package with value: 'autotests.tests'
+22:31:13,956 DEBUG trus.DefaultTestCase| Initializing test parameter 'arg0' as variable
+22:31:13,956 DEBUG  context.TestContext| Setting variable: arg0 with value: 'com.consol.citrus.DefaultTestCaseRunner@38e052b2'
+22:31:13,956 DEBUG trus.DefaultTestCase| Test variables:
+22:31:13,956 DEBUG trus.DefaultTestCase| citrus.test.package = autotests.tests
+22:31:13,956 DEBUG trus.DefaultTestCase| arg0 = com.consol.citrus.DefaultTestCaseRunner@38e052b2
+22:31:13,956 DEBUG trus.DefaultTestCase| citrus.test.name = DuckActionsTestQuack.successfulQuack
+22:31:13,956 DEBUG  context.TestContext| Setting variable: duckId with value: '123'
+22:31:13,956 INFO  port.LoggingReporter| 
+22:31:13,956 DEBUG port.LoggingReporter| TEST STEP 0: sql
+22:31:13,956 DEBUG ons.ExecuteSQLAction| Executing SQL statement: insert into DUCK (id, color, height, material, sound, wings_state)
+values (123, 'yellow', 1.0, 'rubber', 'quack','ACTIVE')
+22:31:13,956 INFO  ons.ExecuteSQLAction| SQL statement execution successful
+22:31:13,956 INFO  port.LoggingReporter| 
+22:31:13,956 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+22:31:13,956 INFO  port.LoggingReporter| 
+22:31:13,956 DEBUG port.LoggingReporter| TEST STEP 0: send
+22:31:13,967 DEBUG ltCorrelationManager| Saving correlation key for 'citrus_message_correlator_yellowDuckService'
+22:31:13,967 DEBUG  context.TestContext| Setting variable: citrus_message_correlator_yellowDuckService with value: 'citrus_message_id = 'd4a99ba6-0587-49d5-b9b8-608260e973d6''
+22:31:13,967 DEBUG  context.TestContext| Setting variable: citrus_message_replyTo_citrus_message_correlator_yellowDuckService with value: 'http://localhost:2222/api/duck/action/quack?repetitionCount=1&amp;soundCount=1&amp;id=123'
+22:31:13,967 INFO     client.HttpClient| Sending HTTP message to: 'http://localhost:2222/api/duck/action/quack?repetitionCount=1&amp;soundCount=1&amp;id=123'
+22:31:13,967 DEBUG    client.HttpClient| Message to send:
+
+22:31:13,967 DEBUG ingClientInterceptor| Sending Http request message
+22:31:13,967 DEBUG   util.TypeConverter| Using type converter 'spring'
+22:31:13,972 DEBUG ingClientInterceptor| Received Http response message
+22:31:13,972 DEBUG   util.TypeConverter| Using type converter 'spring'
+22:31:13,972 INFO     client.HttpClient| HTTP message was sent to endpoint: 'http://localhost:2222/api/duck/action/quack?repetitionCount=1&amp;soundCount=1&amp;id=123'
+22:31:13,972 DEBUG ltCorrelationManager| Saving correlated object for 'citrus_message_id = 'd4a99ba6-0587-49d5-b9b8-608260e973d6''
+22:31:13,972 INFO  port.LoggingReporter| 
+22:31:13,972 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+22:31:13,972 DEBUG       util.FileUtils| Reading file resource: 'successfulQuack.json' (encoding is 'UTF-8')
+22:31:13,972 INFO  port.LoggingReporter| 
+22:31:13,972 DEBUG port.LoggingReporter| TEST STEP 0: receive
+22:31:13,972 DEBUG ngCorrelationManager| Get correlation key for 'citrus_message_correlator_yellowDuckService'
+22:31:13,972 DEBUG ltCorrelationManager| Finding correlated object for 'citrus_message_id = 'd4a99ba6-0587-49d5-b9b8-608260e973d6''
+22:31:13,972 DEBUG ReceiveMessageAction| Received message:
+HTTPMESSAGE [id: 2b111a4a-2edd-403e-8091-a769098a50ab, payload: {
+  &quot;sound&quot;: &quot;quack&quot;
+}][headers: {Transfer-Encoding=chunked, Connection=keep-alive, contentType=application/json, Date=1738251073000, citrus_message_id=2b111a4a-2edd-403e-8091-a769098a50ab, citrus_message_timestamp=1738251073972, Keep-Alive=timeout=60, Content-Type=application/json, citrus_http_status_code=200, citrus_http_reason_phrase=OK, citrus_http_version=HTTP/1.1}]
+22:31:13,988 DEBUG ReceiveMessageAction| Control message:
+HTTPMESSAGE [id: a546156d-9813-4b42-9b54-00a7aed42490, payload: {
+
+  &quot;sound&quot;: &quot;quack&quot;
+}][headers: {citrus_message_id=a546156d-9813-4b42-9b54-00a7aed42490, citrus_message_timestamp=1738251073972, citrus_http_reason_phrase=OK, citrus_http_status_code=200, Content-Type=application/json, citrus_message_type=XML}]
+22:31:13,989 DEBUG ageValidatorRegistry| Found 3 message validators for message
+22:31:13,989 DEBUG ssageHeaderValidator| Start message header validation ...
+22:31:13,989 DEBUG faultHeaderValidator| Validating header element: citrus_http_reason_phrase='OK': OK.
+22:31:13,989 DEBUG faultHeaderValidator| Validating header element: citrus_http_status_code='200': OK.
+22:31:13,989 DEBUG faultHeaderValidator| Validating header element: Content-Type='application/json': OK.
+22:31:13,989 INFO  ssageHeaderValidator| Message header validation successful: All values OK
+22:31:13,989 DEBUG TextMessageValidator| Start JSON message validation ...
+22:31:13,989 DEBUG JsonSchemaValidation| Starting Json schema validation ...
+22:31:13,989 INFO  JsonSchemaValidation| Json schema validation successful: All values OK
+22:31:13,989 DEBUG TextMessageValidator| Validation successful for JSON entry 'sound' (quack)
+22:31:13,989 INFO  TextMessageValidator| JSON message validation successful: All values OK
+22:31:13,989 INFO  port.LoggingReporter| 
+22:31:13,989 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+22:31:13,989 DEBUG trus.DefaultTestCase| Entering finally block in test case
+22:31:13,989 INFO  port.LoggingReporter| 
+22:31:13,989 DEBUG port.LoggingReporter| TEST STEP 0: DuckActionsTestQuack$$Lambda$657/0x0000000840506040
+22:31:13,989 INFO  port.LoggingReporter| 
+22:31:13,989 DEBUG port.LoggingReporter| TEST STEP 0: sql
+22:31:13,989 DEBUG ons.ExecuteSQLAction| Executing SQL statement: DELETE FROM DUCK WHERE ID=123
+22:31:13,989 INFO  ons.ExecuteSQLAction| SQL statement execution successful
+22:31:13,989 INFO  port.LoggingReporter| 
+22:31:13,989 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+22:31:13,989 INFO  port.LoggingReporter| 
+22:31:13,989 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+22:31:13,989 INFO  port.LoggingReporter| 
+22:31:13,989 INFO  port.LoggingReporter| TEST SUCCESS DuckActionsTestQuack.successfulQuack (autotests.tests)
+22:31:13,989 INFO  port.LoggingReporter| ------------------------------------------------------------------------
+22:31:13,989 INFO  port.LoggingReporter| 
+22:31:14,004 DEBUG   util.TypeConverter| Using type converter 'spring'
+22:31:14,004 INFO  port.LoggingReporter| 
+22:31:14,004 INFO  port.LoggingReporter| ------------------------------------------------------------------------
+22:31:14,004 DEBUG port.LoggingReporter| STARTING TEST DuckActionsTestQuack.unsuccessfulQuack &lt;autotests.tests&gt;
+22:31:14,020 INFO  port.LoggingReporter| 
+22:31:14,025 DEBUG trus.DefaultTestCase| Initializing test case
+22:31:14,025 DEBUG  context.TestContext| Setting variable: citrus.test.name with value: 'DuckActionsTestQuack.unsuccessfulQuack'
+22:31:14,025 DEBUG  context.TestContext| Setting variable: citrus.test.package with value: 'autotests.tests'
+22:31:14,025 DEBUG trus.DefaultTestCase| Initializing test parameter 'arg0' as variable
+22:31:14,025 DEBUG  context.TestContext| Setting variable: arg0 with value: 'com.consol.citrus.DefaultTestCaseRunner@13f7c165'
+22:31:14,025 DEBUG trus.DefaultTestCase| Test variables:
+22:31:14,025 DEBUG trus.DefaultTestCase| citrus.test.package = autotests.tests
+22:31:14,025 DEBUG trus.DefaultTestCase| arg0 = com.consol.citrus.DefaultTestCaseRunner@13f7c165
+22:31:14,025 DEBUG trus.DefaultTestCase| citrus.test.name = DuckActionsTestQuack.unsuccessfulQuack
+22:31:14,025 DEBUG  context.TestContext| Setting variable: duckId with value: '124'
+22:31:14,025 INFO  port.LoggingReporter| 
+22:31:14,025 DEBUG port.LoggingReporter| TEST STEP 0: sql
+22:31:14,025 DEBUG ons.ExecuteSQLAction| Executing SQL statement: insert into DUCK (id, color, height, material, sound, wings_state)
+values (124, 'yellow', 1.0, 'rubber', 'quack','ACTIVE')
+22:31:14,025 INFO  ons.ExecuteSQLAction| SQL statement execution successful
+22:31:14,025 INFO  port.LoggingReporter| 
+22:31:14,025 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+22:31:14,025 INFO  port.LoggingReporter| 
+22:31:14,025 DEBUG port.LoggingReporter| TEST STEP 0: send
+22:31:14,025 DEBUG ltCorrelationManager| Saving correlation key for 'citrus_message_correlator_yellowDuckService'
+22:31:14,025 DEBUG  context.TestContext| Setting variable: citrus_message_correlator_yellowDuckService with value: 'citrus_message_id = '2b4f101a-229f-4002-9ae5-bba50c05cf29''
+22:31:14,025 DEBUG  context.TestContext| Setting variable: citrus_message_replyTo_citrus_message_correlator_yellowDuckService with value: 'http://localhost:2222/api/duck/action/quack?repetitionCount=1&amp;soundCount=1&amp;id=124'
+22:31:14,025 INFO     client.HttpClient| Sending HTTP message to: 'http://localhost:2222/api/duck/action/quack?repetitionCount=1&amp;soundCount=1&amp;id=124'
+22:31:14,025 DEBUG    client.HttpClient| Message to send:
+
+22:31:14,025 DEBUG ingClientInterceptor| Sending Http request message
+22:31:14,025 DEBUG   util.TypeConverter| Using type converter 'spring'
+22:31:14,062 DEBUG ingClientInterceptor| Received Http response message
+22:31:14,062 DEBUG   util.TypeConverter| Using type converter 'spring'
+22:31:14,062 INFO     client.HttpClient| HTTP message was sent to endpoint: 'http://localhost:2222/api/duck/action/quack?repetitionCount=1&amp;soundCount=1&amp;id=124'
+22:31:14,062 DEBUG ltCorrelationManager| Saving correlated object for 'citrus_message_id = '2b4f101a-229f-4002-9ae5-bba50c05cf29''
+22:31:14,062 INFO  port.LoggingReporter| 
+22:31:14,062 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+22:31:14,062 DEBUG       util.FileUtils| Reading file resource: 'successfulQuack.json' (encoding is 'UTF-8')
+22:31:14,062 INFO  port.LoggingReporter| 
+22:31:14,062 DEBUG port.LoggingReporter| TEST STEP 0: receive
+22:31:14,072 DEBUG ngCorrelationManager| Get correlation key for 'citrus_message_correlator_yellowDuckService'
+22:31:14,072 DEBUG ltCorrelationManager| Finding correlated object for 'citrus_message_id = '2b4f101a-229f-4002-9ae5-bba50c05cf29''
+22:31:14,072 DEBUG ReceiveMessageAction| Received message:
+HTTPMESSAGE [id: f3451eff-71a0-4eed-b423-d0875bcb4483, payload: {
+  &quot;sound&quot;: &quot;moo&quot;
+}][headers: {Transfer-Encoding=chunked, Connection=keep-alive, contentType=application/json, Date=1738251073000, citrus_message_id=f3451eff-71a0-4eed-b423-d0875bcb4483, citrus_message_timestamp=1738251074062, Keep-Alive=timeout=60, Content-Type=application/json, citrus_http_status_code=200, citrus_http_reason_phrase=OK, citrus_http_version=HTTP/1.1}]
+22:31:14,072 DEBUG ReceiveMessageAction| Control message:
+HTTPMESSAGE [id: 8f42f84b-a230-4dfc-b8aa-004f0b69b82d, payload: {
+
+  &quot;sound&quot;: &quot;quack&quot;
+}][headers: {citrus_message_id=8f42f84b-a230-4dfc-b8aa-004f0b69b82d, citrus_message_timestamp=1738251074062, citrus_http_reason_phrase=OK, citrus_http_status_code=200, Content-Type=application/json, citrus_message_type=XML}]
+22:31:14,072 DEBUG ageValidatorRegistry| Found 3 message validators for message
+22:31:14,072 DEBUG ssageHeaderValidator| Start message header validation ...
+22:31:14,072 DEBUG faultHeaderValidator| Validating header element: citrus_http_reason_phrase='OK': OK.
+22:31:14,072 DEBUG faultHeaderValidator| Validating header element: citrus_http_status_code='200': OK.
+22:31:14,072 DEBUG faultHeaderValidator| Validating header element: Content-Type='application/json': OK.
+22:31:14,072 INFO  ssageHeaderValidator| Message header validation successful: All values OK
+22:31:14,072 DEBUG TextMessageValidator| Start JSON message validation ...
+22:31:14,072 DEBUG JsonSchemaValidation| Starting Json schema validation ...
+22:31:14,072 INFO  JsonSchemaValidation| Json schema validation successful: All values OK
+22:31:14,072 DEBUG trus.DefaultTestCase| Entering finally block in test case
+22:31:14,072 INFO  port.LoggingReporter| 
+22:31:14,072 DEBUG port.LoggingReporter| TEST STEP 0: DuckActionsTestQuack$$Lambda$658/0x0000000840506440
+22:31:14,072 INFO  port.LoggingReporter| 
+22:31:14,072 DEBUG port.LoggingReporter| TEST STEP 0: sql
+22:31:14,072 DEBUG ons.ExecuteSQLAction| Executing SQL statement: DELETE FROM DUCK WHERE ID=124
+22:31:14,072 INFO  ons.ExecuteSQLAction| SQL statement execution successful
+22:31:14,072 INFO  port.LoggingReporter| 
+22:31:14,072 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+22:31:14,072 INFO  port.LoggingReporter| 
+22:31:14,072 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+22:31:14,072 INFO  port.LoggingReporter| 
+22:31:14,072 ERROR port.LoggingReporter| TEST FAILED DuckActionsTestQuack.unsuccessfulQuack &lt;autotests.tests&gt; Nested exception is: 
+com.consol.citrus.exceptions.ValidationException: Failed to validate JSON text:
+{&quot;sound&quot;:&quot;moo&quot;} Values not equal for entry: 'sound', expected 'quack' but was 'moo'
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:114)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:58)
+	at com.consol.citrus.validation.AbstractMessageValidator.validateMessage(AbstractMessageValidator.java:46)
+	at com.consol.citrus.actions.ReceiveMessageAction.validateMessage(ReceiveMessageAction.java:279)
+	at com.consol.citrus.actions.ReceiveMessageAction.doExecute(ReceiveMessageAction.java:168)
+	at com.consol.citrus.actions.AbstractTestAction.execute(AbstractTestAction.java:59)
+	at com.consol.citrus.DefaultTestCase.executeAction(DefaultTestCase.java:136)
+	at com.consol.citrus.DefaultTestCaseRunner.run(DefaultTestCaseRunner.java:125)
+	at com.consol.citrus.TestActionRunner.$(TestActionRunner.java:35)
+	at autotests.clients.DuckClient.validateResponse(DuckClient.java:141)
+	at autotests.tests.DuckActionsTestQuack.unsuccessfulQuack(DuckActionsTestQuack.java:45)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282)
+	at com.consol.citrus.testng.TestNGHelper.lambda$invokeTestMethod$1(TestNGHelper.java:82)
+	at com.consol.citrus.common.DefaultTestLoader.lambda$doLoad$1(DefaultTestLoader.java:116)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at com.consol.citrus.common.DefaultTestLoader.doLoad(DefaultTestLoader.java:116)
+	at com.consol.citrus.common.DefaultTestLoader.load(DefaultTestLoader.java:94)
+	at com.consol.citrus.testng.TestNGHelper.invokeTestMethod(TestNGHelper.java:83)
+	at com.consol.citrus.testng.spring.TestNGCitrusSpringSupport.run(TestNGCitrusSpringSupport.java:185)
+	at com.consol.citrus.testng.spring.TestNGCitrusSpringSupport.run(TestNGCitrusSpringSupport.java:101)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeHookable(MethodInvocationHelper.java:272)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:669)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1541)
+	at org.testng.TestRunner.privateRun(TestRunner.java:829)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:431)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:391)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:330)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1256)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1176)
+	at org.testng.TestNG.runSuites(TestNG.java:1099)
+	at org.testng.TestNG.run(TestNG.java:1067)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.runTests(TestNGTestClassProcessor.java:153)
+	at org.gradle.api.internal.tasks.testing.testng.TestNGTestClassProcessor.stop(TestNGTestClassProcessor.java:96)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.stop(SuiteTestClassProcessor.java:62)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:36)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:94)
+	at com.sun.proxy.$Proxy2.stop(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$3.run(TestWorker.java:193)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:129)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:100)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:60)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:119)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:66)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+Caused by: java.lang.IllegalArgumentException: Values not equal for entry: 'sound', expected 'quack' but was 'moo'
+	at org.springframework.util.Assert.isTrue(Assert.java:121)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateJson(JsonTextMessageValidator.java:211)
+	at com.consol.citrus.validation.json.JsonTextMessageValidator.validateMessage(JsonTextMessageValidator.java:102)
+	... 65 more
+22:31:14,072 INFO  port.LoggingReporter| ------------------------------------------------------------------------
+22:31:14,072 INFO  port.LoggingReporter| 
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.8</a> at 30 янв. 2025 г., 22:31:15</p>
+</div>
+</div>
+</body>
+</html>
