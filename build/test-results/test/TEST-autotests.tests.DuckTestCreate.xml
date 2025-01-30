@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="autotests.tests.DuckTestCreate" tests="2" skipped="0" failures="0" errors="0" timestamp="2025-01-30T15:31:14" hostname="DESKTOP-QAOLIJ0" time="0.232">
+  <properties/>
+  <testcase name="successfulCreationRubber[0](null)" classname="autotests.tests.DuckTestCreate" time="0.186"/>
+  <testcase name="successfulCreationWood[0](null)" classname="autotests.tests.DuckTestCreate" time="0.03"/>
+  <system-out><![CDATA[22:31:14,276 DEBUG   util.TypeConverter| Using type converter 'spring'
+22:31:14,281 INFO  port.LoggingReporter| 
+22:31:14,281 INFO  port.LoggingReporter| ------------------------------------------------------------------------
+22:31:14,287 DEBUG port.LoggingReporter| STARTING TEST DuckTestCreate.successfulCreationRubber <autotests.tests>
+22:31:14,287 INFO  port.LoggingReporter| 
+22:31:14,287 DEBUG trus.DefaultTestCase| Initializing test case
+22:31:14,287 DEBUG  context.TestContext| Setting variable: citrus.test.name with value: 'DuckTestCreate.successfulCreationRubber'
+22:31:14,287 DEBUG  context.TestContext| Setting variable: citrus.test.package with value: 'autotests.tests'
+22:31:14,287 DEBUG trus.DefaultTestCase| Initializing test parameter 'arg0' as variable
+22:31:14,287 DEBUG  context.TestContext| Setting variable: arg0 with value: 'com.consol.citrus.DefaultTestCaseRunner@b791e6e'
+22:31:14,287 DEBUG trus.DefaultTestCase| Test variables:
+22:31:14,287 DEBUG trus.DefaultTestCase| citrus.test.package = autotests.tests
+22:31:14,287 DEBUG trus.DefaultTestCase| arg0 = com.consol.citrus.DefaultTestCaseRunner@b791e6e
+22:31:14,287 DEBUG trus.DefaultTestCase| citrus.test.name = DuckTestCreate.successfulCreationRubber
+22:31:14,288 INFO  port.LoggingReporter| 
+22:31:14,288 DEBUG port.LoggingReporter| TEST STEP 0: send
+22:31:14,288 DEBUG ltCorrelationManager| Saving correlation key for 'citrus_message_correlator_yellowDuckService'
+22:31:14,288 DEBUG  context.TestContext| Setting variable: citrus_message_correlator_yellowDuckService with value: 'citrus_message_id = 'bf36ed95-6371-4faa-9af2-97a6c792fe9f''
+22:31:14,288 DEBUG  context.TestContext| Setting variable: citrus_message_replyTo_citrus_message_correlator_yellowDuckService with value: 'http://localhost:2222/api/duck/create'
+22:31:14,288 INFO     client.HttpClient| Sending HTTP message to: 'http://localhost:2222/api/duck/create'
+22:31:14,288 DEBUG    client.HttpClient| Message to send:
+{"color":"yellow","height":1.0,"material":"rubber","sound":"quack","wingsState":"ACTIVE"}
+22:31:14,297 DEBUG ingClientInterceptor| Sending Http request message
+22:31:14,297 DEBUG   util.TypeConverter| Using type converter 'spring'
+22:31:14,315 DEBUG ingClientInterceptor| Received Http response message
+22:31:14,315 DEBUG   util.TypeConverter| Using type converter 'spring'
+22:31:14,318 INFO     client.HttpClient| HTTP message was sent to endpoint: 'http://localhost:2222/api/duck/create'
+22:31:14,318 DEBUG ltCorrelationManager| Saving correlated object for 'citrus_message_id = 'bf36ed95-6371-4faa-9af2-97a6c792fe9f''
+22:31:14,318 INFO  port.LoggingReporter| 
+22:31:14,318 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+22:31:14,340 INFO  port.LoggingReporter| 
+22:31:14,340 DEBUG port.LoggingReporter| TEST STEP 0: receive
+22:31:14,340 DEBUG ngCorrelationManager| Get correlation key for 'citrus_message_correlator_yellowDuckService'
+22:31:14,340 DEBUG ltCorrelationManager| Finding correlated object for 'citrus_message_id = 'bf36ed95-6371-4faa-9af2-97a6c792fe9f''
+22:31:14,340 DEBUG ReceiveMessageAction| Received message:
+HTTPMESSAGE [id: b5a0fadc-037f-4cd8-951f-4f24fbd6c2bd, payload: {
+  "id": 3,
+  "color": "yellow",
+  "height": 1.0,
+  "material": "rubber",
+  "sound": "quack",
+  "wingsState": "ACTIVE"
+}][headers: {Transfer-Encoding=chunked, Connection=keep-alive, contentType=application/json, Date=1738251073000, citrus_message_id=b5a0fadc-037f-4cd8-951f-4f24fbd6c2bd, citrus_message_timestamp=1738251074318, Keep-Alive=timeout=60, Content-Type=application/json, citrus_http_status_code=200, citrus_http_reason_phrase=OK, citrus_http_version=HTTP/1.1}]
+22:31:14,340 DEBUG oadVariableExtractor| Reading path elements.
+22:31:14,345 DEBUG athVariableExtractor| Reading JSON elements with JSONPath
+22:31:14,345 DEBUG athVariableExtractor| Evaluating JSONPath expression: $.id
+22:31:14,400 DEBUG  context.TestContext| Setting variable: duckId with value: '3'
+22:31:14,400 DEBUG ReceiveMessageAction| Control message:
+HTTPMESSAGE [id: 702d0824-13db-4cdb-9ef4-dda7356d2221, payload: {
+
+  "id": 3,
+  "color": "yellow",
+  "height": 1.0,
+  "material": "rubber",
+  "sound": "quack",
+  "wingsState": "ACTIVE"
+}][headers: {citrus_message_id=702d0824-13db-4cdb-9ef4-dda7356d2221, citrus_message_timestamp=1738251074322, citrus_http_reason_phrase=OK, citrus_http_status_code=200, citrus_message_type=XML}]
+22:31:14,400 DEBUG ageValidatorRegistry| Found 3 message validators for message
+22:31:14,400 DEBUG ssageHeaderValidator| Start message header validation ...
+22:31:14,400 DEBUG faultHeaderValidator| Validating header element: citrus_http_reason_phrase='OK': OK.
+22:31:14,400 DEBUG faultHeaderValidator| Validating header element: citrus_http_status_code='200': OK.
+22:31:14,400 INFO  ssageHeaderValidator| Message header validation successful: All values OK
+22:31:14,400 DEBUG TextMessageValidator| Start JSON message validation ...
+22:31:14,400 DEBUG JsonSchemaValidation| Starting Json schema validation ...
+22:31:14,400 INFO  JsonSchemaValidation| Json schema validation successful: All values OK
+22:31:14,400 DEBUG TextMessageValidator| Validation successful for JSON entry 'color' (yellow)
+22:31:14,400 DEBUG TextMessageValidator| Validation successful for JSON entry 'material' (rubber)
+22:31:14,400 DEBUG TextMessageValidator| Validation successful for JSON entry 'wingsState' (ACTIVE)
+22:31:14,400 DEBUG TextMessageValidator| Validation successful for JSON entry 'sound' (quack)
+22:31:14,400 DEBUG TextMessageValidator| Validation successful for JSON entry 'id' (3)
+22:31:14,400 DEBUG TextMessageValidator| Validation successful for JSON entry 'height' (1.0)
+22:31:14,400 INFO  TextMessageValidator| JSON message validation successful: All values OK
+22:31:14,400 INFO  port.LoggingReporter| 
+22:31:14,400 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+22:31:14,415 INFO  port.LoggingReporter| 
+22:31:14,415 DEBUG port.LoggingReporter| TEST STEP 0: sql-query
+22:31:14,415 DEBUG xecuteSQLQueryAction| Executing SQL query: SELECT * FROM DUCK WHERE ID=3
+22:31:14,462 INFO  xecuteSQLQueryAction| SQL query execution successful
+22:31:14,462 DEBUG xecuteSQLQueryAction| Validation successful for column: 'COLOR' expected value: yellow - value OK
+22:31:14,462 DEBUG xecuteSQLQueryAction| Validation successful for column: 'SOUND' expected value: quack - value OK
+22:31:14,462 DEBUG xecuteSQLQueryAction| Validation successful for column: 'WINGS_STATE' expected value: ACTIVE - value OK
+22:31:14,462 DEBUG xecuteSQLQueryAction| Validation successful for column: 'HEIGHT' expected value: 1.0 - value OK
+22:31:14,462 DEBUG xecuteSQLQueryAction| Validation successful for column: 'MATERIAL' expected value: rubber - value OK
+22:31:14,462 INFO  xecuteSQLQueryAction| SQL query validation successful: All values OK
+22:31:14,462 DEBUG  context.TestContext| Setting variable: COLOR with value: 'yellow'
+22:31:14,462 DEBUG  context.TestContext| Setting variable: SOUND with value: 'quack'
+22:31:14,462 DEBUG  context.TestContext| Setting variable: ID with value: '3'
+22:31:14,462 DEBUG  context.TestContext| Setting variable: WINGS_STATE with value: 'ACTIVE'
+22:31:14,462 DEBUG  context.TestContext| Setting variable: HEIGHT with value: '1.0'
+22:31:14,462 DEBUG  context.TestContext| Setting variable: MATERIAL with value: 'rubber'
+22:31:14,462 INFO  port.LoggingReporter| 
+22:31:14,462 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+22:31:14,462 DEBUG trus.DefaultTestCase| Entering finally block in test case
+22:31:14,462 INFO  port.LoggingReporter| 
+22:31:14,462 DEBUG port.LoggingReporter| TEST STEP 0: DuckTestCreate$$Lambda$662/0x0000000840517840
+22:31:14,462 INFO  port.LoggingReporter| 
+22:31:14,462 DEBUG port.LoggingReporter| TEST STEP 0: sql
+22:31:14,462 DEBUG ons.ExecuteSQLAction| Executing SQL statement: DELETE FROM DUCK WHERE ID=3
+22:31:14,462 INFO  ons.ExecuteSQLAction| SQL statement execution successful
+22:31:14,462 INFO  port.LoggingReporter| 
+22:31:14,462 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+22:31:14,462 INFO  port.LoggingReporter| 
+22:31:14,462 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+22:31:14,462 INFO  port.LoggingReporter| 
+22:31:14,462 INFO  port.LoggingReporter| TEST SUCCESS DuckTestCreate.successfulCreationRubber (autotests.tests)
+22:31:14,462 INFO  port.LoggingReporter| ------------------------------------------------------------------------
+22:31:14,462 INFO  port.LoggingReporter| 
+22:31:14,478 DEBUG   util.TypeConverter| Using type converter 'spring'
+22:31:14,478 INFO  port.LoggingReporter| 
+22:31:14,478 INFO  port.LoggingReporter| ------------------------------------------------------------------------
+22:31:14,478 DEBUG port.LoggingReporter| STARTING TEST DuckTestCreate.successfulCreationWood <autotests.tests>
+22:31:14,478 INFO  port.LoggingReporter| 
+22:31:14,478 DEBUG trus.DefaultTestCase| Initializing test case
+22:31:14,478 DEBUG  context.TestContext| Setting variable: citrus.test.name with value: 'DuckTestCreate.successfulCreationWood'
+22:31:14,478 DEBUG  context.TestContext| Setting variable: citrus.test.package with value: 'autotests.tests'
+22:31:14,478 DEBUG trus.DefaultTestCase| Initializing test parameter 'arg0' as variable
+22:31:14,478 DEBUG  context.TestContext| Setting variable: arg0 with value: 'com.consol.citrus.DefaultTestCaseRunner@18adc20a'
+22:31:14,478 DEBUG trus.DefaultTestCase| Test variables:
+22:31:14,478 DEBUG trus.DefaultTestCase| citrus.test.package = autotests.tests
+22:31:14,478 DEBUG trus.DefaultTestCase| arg0 = com.consol.citrus.DefaultTestCaseRunner@18adc20a
+22:31:14,478 DEBUG trus.DefaultTestCase| citrus.test.name = DuckTestCreate.successfulCreationWood
+22:31:14,478 INFO  port.LoggingReporter| 
+22:31:14,478 DEBUG port.LoggingReporter| TEST STEP 0: send
+22:31:14,478 DEBUG ltCorrelationManager| Saving correlation key for 'citrus_message_correlator_yellowDuckService'
+22:31:14,478 DEBUG  context.TestContext| Setting variable: citrus_message_correlator_yellowDuckService with value: 'citrus_message_id = 'a7e930e7-cf64-4af1-8ffd-a996e5c0f66b''
+22:31:14,478 DEBUG  context.TestContext| Setting variable: citrus_message_replyTo_citrus_message_correlator_yellowDuckService with value: 'http://localhost:2222/api/duck/create'
+22:31:14,478 INFO     client.HttpClient| Sending HTTP message to: 'http://localhost:2222/api/duck/create'
+22:31:14,478 DEBUG    client.HttpClient| Message to send:
+{"color":"yellow","height":1.0,"material":"wood","sound":"quack","wingsState":"ACTIVE"}
+22:31:14,494 DEBUG ingClientInterceptor| Sending Http request message
+22:31:14,494 DEBUG   util.TypeConverter| Using type converter 'spring'
+22:31:14,508 DEBUG ingClientInterceptor| Received Http response message
+22:31:14,508 DEBUG   util.TypeConverter| Using type converter 'spring'
+22:31:14,508 INFO     client.HttpClient| HTTP message was sent to endpoint: 'http://localhost:2222/api/duck/create'
+22:31:14,508 DEBUG ltCorrelationManager| Saving correlated object for 'citrus_message_id = 'a7e930e7-cf64-4af1-8ffd-a996e5c0f66b''
+22:31:14,508 INFO  port.LoggingReporter| 
+22:31:14,508 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+22:31:14,508 INFO  port.LoggingReporter| 
+22:31:14,508 DEBUG port.LoggingReporter| TEST STEP 0: receive
+22:31:14,508 DEBUG ngCorrelationManager| Get correlation key for 'citrus_message_correlator_yellowDuckService'
+22:31:14,508 DEBUG ltCorrelationManager| Finding correlated object for 'citrus_message_id = 'a7e930e7-cf64-4af1-8ffd-a996e5c0f66b''
+22:31:14,508 DEBUG ReceiveMessageAction| Received message:
+HTTPMESSAGE [id: 425e79ee-3f3a-480f-bb1a-c1e37d9ede67, payload: {
+  "id": 4,
+  "color": "yellow",
+  "height": 1.0,
+  "material": "wood",
+  "sound": "quack",
+  "wingsState": "ACTIVE"
+}][headers: {Transfer-Encoding=chunked, Connection=keep-alive, contentType=application/json, Date=1738251073000, citrus_message_id=425e79ee-3f3a-480f-bb1a-c1e37d9ede67, citrus_message_timestamp=1738251074508, Keep-Alive=timeout=60, Content-Type=application/json, citrus_http_status_code=200, citrus_http_reason_phrase=OK, citrus_http_version=HTTP/1.1}]
+22:31:14,508 DEBUG oadVariableExtractor| Reading path elements.
+22:31:14,508 DEBUG athVariableExtractor| Reading JSON elements with JSONPath
+22:31:14,508 DEBUG athVariableExtractor| Evaluating JSONPath expression: $.id
+22:31:14,508 DEBUG  context.TestContext| Setting variable: duckId with value: '4'
+22:31:14,508 DEBUG ReceiveMessageAction| Control message:
+HTTPMESSAGE [id: 882b9589-22f1-4730-863a-bbb71408cc9b, payload: {
+
+  "id": 4,
+  "color": "yellow",
+  "height": 1.0,
+  "material": "wood",
+  "sound": "quack",
+  "wingsState": "ACTIVE"
+}][headers: {citrus_message_id=882b9589-22f1-4730-863a-bbb71408cc9b, citrus_message_timestamp=1738251074508, citrus_http_reason_phrase=OK, citrus_http_status_code=200, citrus_message_type=XML}]
+22:31:14,508 DEBUG ageValidatorRegistry| Found 3 message validators for message
+22:31:14,508 DEBUG ssageHeaderValidator| Start message header validation ...
+22:31:14,508 DEBUG faultHeaderValidator| Validating header element: citrus_http_reason_phrase='OK': OK.
+22:31:14,508 DEBUG faultHeaderValidator| Validating header element: citrus_http_status_code='200': OK.
+22:31:14,508 INFO  ssageHeaderValidator| Message header validation successful: All values OK
+22:31:14,508 DEBUG TextMessageValidator| Start JSON message validation ...
+22:31:14,508 DEBUG JsonSchemaValidation| Starting Json schema validation ...
+22:31:14,508 INFO  JsonSchemaValidation| Json schema validation successful: All values OK
+22:31:14,508 DEBUG TextMessageValidator| Validation successful for JSON entry 'color' (yellow)
+22:31:14,508 DEBUG TextMessageValidator| Validation successful for JSON entry 'material' (wood)
+22:31:14,508 DEBUG TextMessageValidator| Validation successful for JSON entry 'wingsState' (ACTIVE)
+22:31:14,508 DEBUG TextMessageValidator| Validation successful for JSON entry 'sound' (quack)
+22:31:14,508 DEBUG TextMessageValidator| Validation successful for JSON entry 'id' (4)
+22:31:14,508 DEBUG TextMessageValidator| Validation successful for JSON entry 'height' (1.0)
+22:31:14,508 INFO  TextMessageValidator| JSON message validation successful: All values OK
+22:31:14,508 INFO  port.LoggingReporter| 
+22:31:14,508 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+22:31:14,508 INFO  port.LoggingReporter| 
+22:31:14,508 DEBUG port.LoggingReporter| TEST STEP 0: sql-query
+22:31:14,508 DEBUG xecuteSQLQueryAction| Executing SQL query: SELECT * FROM DUCK WHERE ID=4
+22:31:14,508 INFO  xecuteSQLQueryAction| SQL query execution successful
+22:31:14,508 DEBUG xecuteSQLQueryAction| Validation successful for column: 'COLOR' expected value: yellow - value OK
+22:31:14,508 DEBUG xecuteSQLQueryAction| Validation successful for column: 'SOUND' expected value: quack - value OK
+22:31:14,508 DEBUG xecuteSQLQueryAction| Validation successful for column: 'WINGS_STATE' expected value: ACTIVE - value OK
+22:31:14,508 DEBUG xecuteSQLQueryAction| Validation successful for column: 'HEIGHT' expected value: 1.0 - value OK
+22:31:14,508 DEBUG xecuteSQLQueryAction| Validation successful for column: 'MATERIAL' expected value: wood - value OK
+22:31:14,508 INFO  xecuteSQLQueryAction| SQL query validation successful: All values OK
+22:31:14,508 DEBUG  context.TestContext| Setting variable: COLOR with value: 'yellow'
+22:31:14,508 DEBUG  context.TestContext| Setting variable: SOUND with value: 'quack'
+22:31:14,508 DEBUG  context.TestContext| Setting variable: ID with value: '4'
+22:31:14,508 DEBUG  context.TestContext| Setting variable: WINGS_STATE with value: 'ACTIVE'
+22:31:14,508 DEBUG  context.TestContext| Setting variable: HEIGHT with value: '1.0'
+22:31:14,508 DEBUG  context.TestContext| Setting variable: MATERIAL with value: 'wood'
+22:31:14,508 INFO  port.LoggingReporter| 
+22:31:14,508 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+22:31:14,508 DEBUG trus.DefaultTestCase| Entering finally block in test case
+22:31:14,508 INFO  port.LoggingReporter| 
+22:31:14,508 DEBUG port.LoggingReporter| TEST STEP 0: DuckTestCreate$$Lambda$666/0x000000084052f840
+22:31:14,508 INFO  port.LoggingReporter| 
+22:31:14,508 DEBUG port.LoggingReporter| TEST STEP 0: sql
+22:31:14,508 DEBUG ons.ExecuteSQLAction| Executing SQL statement: DELETE FROM DUCK WHERE ID=4
+22:31:14,508 INFO  ons.ExecuteSQLAction| SQL statement execution successful
+22:31:14,508 INFO  port.LoggingReporter| 
+22:31:14,508 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+22:31:14,508 INFO  port.LoggingReporter| 
+22:31:14,508 DEBUG port.LoggingReporter| TEST STEP 0 SUCCESS
+22:31:14,508 INFO  port.LoggingReporter| 
+22:31:14,508 INFO  port.LoggingReporter| TEST SUCCESS DuckTestCreate.successfulCreationWood (autotests.tests)
+22:31:14,508 INFO  port.LoggingReporter| ------------------------------------------------------------------------
+22:31:14,508 INFO  port.LoggingReporter| 
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
