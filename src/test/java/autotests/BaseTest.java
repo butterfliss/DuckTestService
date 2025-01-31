@@ -108,5 +108,4 @@ public class BaseTest extends TestNGCitrusSpringSupport{
                         .extract(fromBody().expression("$.id", "duckId"))
                         .body(new ClassPathResource(responseMessage)));
     }
-
 }

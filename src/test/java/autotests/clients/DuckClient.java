@@ -4,13 +4,9 @@ import autotests.BaseTest;
 import autotests.EndpointConfig;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.http.client.HttpClient;
-import com.consol.citrus.message.builder.ObjectMappingPayloadBuilder;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import io.qameta.allure.Step;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.jdbc.datasource.SingleConnectionDataSource;
 import org.springframework.test.context.ContextConfiguration;
 

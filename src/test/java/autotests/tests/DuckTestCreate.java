@@ -12,7 +12,6 @@ import io.qameta.allure.Feature;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
-
 import static com.consol.citrus.container.FinallySequence.Builder.doFinally;
 
 @Epic("Тесты на duck-controller")
@@ -91,6 +90,5 @@ public class DuckTestCreate extends DuckClient {
         validateResponseCreate(runner, "yellow", 1.0, "wood", "quack", "ACTIVE");
         validateDuckInDatabase(runner, "${duckId}", "yellow", "1.0", "wood", "quack", "ACTIVE");
     }
-
 
 }
