@@ -103,10 +103,10 @@ public class DuckClient extends BaseTest {
     }
 
     @Step("Эндпоинт для валидации ответов")
-    public void validateResponseTestCreation(TestCaseRunner runner, Object body) {
+    public void validateResponseTestCreation(TestCaseRunner runner, String responseMessage) {
         receiveValidateResponseRequest(runner,
                 yellowDuckService,
-                body);
+                responseMessage);
     }
 
     @Step("Эндпоинт для валидации обновления")

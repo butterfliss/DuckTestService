@@ -31,7 +31,7 @@ public class DuckTestCreate extends DuckClient {
             .sound("quack")
             .wingsState(WingState.ACTIVE);
     Duck duckProperties3 = new Duck()
-            .color("yellow")
+            .color("blue")
             .height(3.05)
             .material("rubber")
             .sound("quack")
@@ -52,7 +52,7 @@ public class DuckTestCreate extends DuckClient {
     @Test(dataProvider = "duckList")
     @CitrusTest
     @CitrusParameters({"payload", "response", "runner"})
-    public void successfulCreation(Object payload, Object response, @Optional @CitrusResource TestCaseRunner runner)  {
+    public void successfulCreation(Object payload, String response, @Optional @CitrusResource TestCaseRunner runner)  {
         deleteFromDB(runner);
         createDuck(runner, payload);
         validateResponseTestCreation(runner, response);
@@ -61,11 +61,11 @@ public class DuckTestCreate extends DuckClient {
     @DataProvider(name = "duckList")
     public Object[][] DuckProvider() {
         return new Object[][]{
-                {duckProperties1, duckProperties1.id(), null},
-                {duckProperties2, duckProperties2.id(), null},
-                {duckProperties3, duckProperties3.id(), null},
-                {duckProperties4, duckProperties4.id(), null},
-                {duckProperties5, duckProperties5.id(), null}
+                {duckProperties1, "getDuckPropertiesTest/duckYellowProperties.json", null},
+                {duckProperties2, "getDuckPropertiesTest/duckBlackProperties.json", null},
+                {duckProperties3, "getDuckPropertiesTest/duckBlueProperties.json", null},
+                {duckProperties4, "getDuckPropertiesTest/duckPurpleProperties.json", null},
+                {duckProperties5, "getDuckPropertiesTest/duckGreenProperties.json", null}
         };
 
     }

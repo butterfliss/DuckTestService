@@ -97,7 +97,7 @@ public class BaseTest extends TestNGCitrusSpringSupport{
                         .body(new ObjectMappingPayloadBuilder(body, new ObjectMapper())));
     }
 
-    protected void receiveValidateResponseRequest(TestCaseRunner runner, HttpClient URL, Object body) {
+    protected void receiveValidateResponseRequest(TestCaseRunner runner, HttpClient URL, String responseMessage) {
         runner.$(
                 http()
                         .client(URL)
@@ -106,7 +106,7 @@ public class BaseTest extends TestNGCitrusSpringSupport{
                         .message()
                         .contentType(MediaType.APPLICATION_JSON_VALUE)
                         .extract(fromBody().expression("$.id", "duckId"))
-                        .body(new ObjectMappingPayloadBuilder(body, new ObjectMapper())));
+                        .body(new ClassPathResource(responseMessage)));
     }
 
 }
