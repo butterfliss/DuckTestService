@@ -25,4 +25,5 @@ public class DuckTestDelete extends DuckClient {
         getAllIds(runner);
         validateResponse(runner, "DuckActionTest/successfulDeleteDB.json");
     }
+
 }

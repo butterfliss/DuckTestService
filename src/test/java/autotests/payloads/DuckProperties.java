@@ -11,7 +11,6 @@ import lombok.experimental.Accessors;
 @Accessors(fluent = true)
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class DuckProperties {
-
     @JsonProperty("color")
     private String color;
     @JsonProperty("height")

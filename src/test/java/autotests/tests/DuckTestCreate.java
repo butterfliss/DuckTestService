@@ -66,7 +66,6 @@ public class DuckTestCreate extends DuckClient {
                 {duckProperties4, "getDuckPropertiesTest/duckPurpleProperties.json", null},
                 {duckProperties5, "getDuckPropertiesTest/duckGreenProperties.json", null}
         };
-
     }
 
     @Test(description = "Создание резиновой уточки")

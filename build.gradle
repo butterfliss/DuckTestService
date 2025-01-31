@@ -22,6 +22,7 @@ dependencies {
     testImplementation group: 'com.h2database', name: 'h2', version: '1.4.196'
     testImplementation group: 'com.consol.citrus', name: 'citrus-sql', version: '3.4.0'
 }
+
 test {
     useTestNG()
 }

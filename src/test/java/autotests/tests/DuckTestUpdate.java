@@ -41,4 +41,5 @@ public class DuckTestUpdate extends DuckClient {
         validateResponseUpdate(runner, "{\n" + "  \"message\": \"Sound can not be updated\"\n" + "}");
         validateDuckInDatabase(runner, "${duckId}","black", "0.15", "rubber", "moo", "ACTIVE");
     }
+
 }
