@@ -1,17 +1,15 @@
 package autotests.tests;
 
 import autotests.clients.DuckClient;
-import autotests.payloads.Duck;
+import autotests.payloads.DuckProperties;
 import autotests.payloads.WingState;
 import com.consol.citrus.TestCaseRunner;
 import com.consol.citrus.annotations.CitrusResource;
 import com.consol.citrus.annotations.CitrusTest;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
-import org.springframework.http.HttpStatus;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Test;
-
 import static com.consol.citrus.container.FinallySequence.Builder.doFinally;
 
 @Epic("Тесты на duck-action-controller")
@@ -27,7 +25,7 @@ public class DuckActionsTestProperties extends DuckClient {
         databaseUpdate(runner,
                 "insert into DUCK (id, color, height, material, sound, wings_state)\n" +
                         "values (${duckId}, 'yellow', 1.0, 'rubber', 'quack','ACTIVE');");
-        Duck duck = new Duck().color("yellow").height(100.0).material("rubber").sound("quack").wingsState(WingState.ACTIVE);
+        DuckProperties duck = new DuckProperties().color("yellow").height(1.0).material("rubber").sound("quack").wingsState(WingState.ACTIVE);
         duckProperties(runner, "${duckId}");
         validateResponseProperties(runner,duck);
     }
@@ -41,7 +39,7 @@ public class DuckActionsTestProperties extends DuckClient {
         databaseUpdate(runner,
                 "insert into DUCK (id, color, height, material, sound, wings_state)\n" +
                         "values (${duckId}, 'yellow', 1.0, 'wood', 'quack','ACTIVE');");
-        Duck duck = new Duck().color("yellow").height(100.0).material("wood").sound("quack").wingsState(WingState.ACTIVE);
+        DuckProperties duck = new DuckProperties().color("yellow").height(1.0).material("wood").sound("quack").wingsState(WingState.ACTIVE);
         duckProperties(runner, "${duckId}");
         validateResponseProperties(runner,duck);
     }
