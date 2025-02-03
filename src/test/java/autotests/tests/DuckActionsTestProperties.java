@@ -25,7 +25,7 @@ public class DuckActionsTestProperties extends DuckClient {
         databaseUpdate(runner,
                 "insert into DUCK (id, color, height, material, sound, wings_state)\n" +
                         "values (${duckId}, 'yellow', 1.0, 'rubber', 'quack','ACTIVE');");
-        DuckProperties duck = new DuckProperties().color("yellow").height(100.0).material("rubber").sound("quack").wingsState(WingState.ACTIVE);
+        DuckProperties duck = new DuckProperties().color("yellow").height(1.0).material("rubber").sound("quack").wingsState(WingState.ACTIVE);
         duckProperties(runner, "${duckId}");
         validateResponseProperties(runner,duck);
     }
@@ -39,7 +39,7 @@ public class DuckActionsTestProperties extends DuckClient {
         databaseUpdate(runner,
                 "insert into DUCK (id, color, height, material, sound, wings_state)\n" +
                         "values (${duckId}, 'yellow', 1.0, 'wood', 'quack','ACTIVE');");
-        DuckProperties duck = new DuckProperties().color("yellow").height(100.0).material("wood").sound("quack").wingsState(WingState.ACTIVE);
+        DuckProperties duck = new DuckProperties().color("yellow").height(1.0).material("wood").sound("quack").wingsState(WingState.ACTIVE);
         duckProperties(runner, "${duckId}");
         validateResponseProperties(runner,duck);
     }

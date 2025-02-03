@@ -46,7 +46,7 @@ public class BaseTest extends TestNGCitrusSpringSupport{
                 .body(new ObjectMappingPayloadBuilder(body, new ObjectMapper())));
     }
 
-    protected void receiveResponseCreateRequest(TestCaseRunner runner, HttpClient URL, String color, double height, String material, String sound, String wingsState) {
+    protected void receiveResponseCreateRequest(TestCaseRunner runner, HttpClient URL, String param) {
         runner.$(
                 http()
                         .client(URL)
@@ -54,13 +54,7 @@ public class BaseTest extends TestNGCitrusSpringSupport{
                         .response(HttpStatus.OK)
                         .message()
                         .extract(fromBody().expression("$.id", "duckId"))
-                        .body("{\n" + "  \"id\": " + "${duckId}" + ","
-                                + "  \"color\": \"" + color + "\","
-                                + "  \"height\": " + height + ","
-                                + "  \"material\": \"" + material + "\","
-                                + "  \"sound\": \"" + sound + "\","
-                                + "  \"wingsState\": \"" + wingsState
-                                + "\"\n" + "}"));
+                        .body(param));
     }
 
     protected void receiveResponseUpdateRequest(TestCaseRunner runner, HttpClient URL, String responseMessage) {

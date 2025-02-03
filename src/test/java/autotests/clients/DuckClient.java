@@ -115,11 +115,13 @@ public class DuckClient extends BaseTest {
     public void validateResponseCreate(TestCaseRunner runner, String color, double height, String material, String sound, String wingsState) {
         receiveResponseCreateRequest(runner,
                 yellowDuckService,
-                color,
-                height,
-                material,
-                sound,
-                wingsState);
+                "{\n" + "  \"id\": " + "${duckId}" + ","
+                        + "  \"color\": \"" + color + "\","
+                        + "  \"height\": " + height + ","
+                        + "  \"material\": \"" + material + "\","
+                        + "  \"sound\": \"" + sound + "\","
+                        + "  \"wingsState\": \"" + wingsState
+                        + "\"\n" + "}");
     }
 
     @Step("Эндпоинт для создания уточки")
